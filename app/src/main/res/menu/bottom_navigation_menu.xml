@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_homebuttonvector"/>
+    <item
+        android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_searchbuttonvector"/>
+    <item
+        android:id="@+id/plan"
+        android:title="Trip Plan"
+        android:icon="@drawable/ic_planbuttonvector"/>
+    <item
+        android:id="@+id/guide"
+        android:title="Guide"
+        android:icon="@drawable/ic_guidebuttonvector"/>
+</menu>

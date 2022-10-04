@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.search.ui.SearchFragment">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:text="@string/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/title_style" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:hint="@string/where_next"
+            app:endIconDrawable="@drawable/ic_searchvector"
+            app:endIconMode="custom"
+            app:endIconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColorHint="#757575"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:text="@string/top_destinations"
+            app:layout_constraintStart_toStartOf="@+id/outlinedTextField"
+            app:layout_constraintTop_toBottomOf="@+id/outlinedTextField"
+            style="@style/subtitle_style" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_154sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintStart_toStartOf="@+id/topTitle"
+            app:layout_constraintTop_toBottomOf="@+id/topTitle" />
+        <TextView
+            android:id="@+id/nearbyTitle"
+            android:text="@string/nearby_attractions"
+            app:layout_constraintStart_toStartOf="@+id/recyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+            style="@style/subtitle_style" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="@dimen/_275sdp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintStart_toStartOf="@+id/nearbyTitle"
+            app:layout_constraintTop_toBottomOf="@+id/nearbyTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

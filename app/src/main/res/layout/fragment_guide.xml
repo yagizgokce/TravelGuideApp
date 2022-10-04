@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GuideFragment">
+
+        <TextView
+            android:id="@+id/guideText"
+            style="@style/title_style"
+            android:text="@string/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mightNeedTitle"
+            style="@style/subtitle_style"
+            android:text="@string/might_need_these"
+            app:layout_constraintStart_toStartOf="@+id/guideText"
+            app:layout_constraintTop_toBottomOf="@+id/guideText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mightNeedRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_96sdp"
+            android:layout_marginTop="@dimen/_11sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mightNeedTitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/guideSearchBar"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:hint="@string/a_country_a_city_a_place_or_anything"
+            app:endIconDrawable="@drawable/ic_searchvector"
+            app:endIconMode="custom"
+            app:endIconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mightNeedRecyclerview">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColorHint="#757575"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/pickTitle"
+            style="@style/subtitle_style"
+            android:layout_marginTop="48dp"
+            android:text="Top-pick articles"
+            app:layout_constraintStart_toStartOf="@+id/guideSearchBar"
+            app:layout_constraintTop_toBottomOf="@+id/guideSearchBar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_209sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintStart_toStartOf="@+id/pickTitle"
+            app:layout_constraintTop_toBottomOf="@+id/pickTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
