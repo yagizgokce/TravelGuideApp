@@ -12,9 +12,11 @@
         <entry key="app/src/main/res/layout/fragment_guide.xml" value="0.1545045045045045" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/layout/fragment_trip_plan.xml" value="0.1545045045045045" />
+        <entry key="app/src/main/res/layout/fragment_trip_plan.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/mightneed_recycler_row.xml" value="0.16576576576576577" />
         <entry key="app/src/main/res/layout/nearby_recycler_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/topdestination_recycler_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/toppick_recycler_row.xml" value="0.14444444444444443" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.16666666666666666" />
       </map>
     </option>

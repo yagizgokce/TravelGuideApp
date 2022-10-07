@@ -57,8 +57,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/topDestinationRecyclerView"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_154sdp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/topTitle"
             app:layout_constraintTop_toBottomOf="@+id/topTitle" />
         <TextView
@@ -70,10 +71,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nearbyRecyclerView"
-            android:layout_width="@dimen/_275sdp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="193dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/nearbyTitle"
-            app:layout_constraintTop_toBottomOf="@+id/nearbyTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/nearbyTitle"
+            app:layout_constraintVertical_bias="0.102" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

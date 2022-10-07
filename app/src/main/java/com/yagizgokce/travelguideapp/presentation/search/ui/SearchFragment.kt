@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yagizgokce.travelguideapp.R
 import com.yagizgokce.travelguideapp.databinding.FragmentSearchBinding
+import com.yagizgokce.travelguideapp.presentation.search.adapter.NearbyRecyclerAdapter
 import com.yagizgokce.travelguideapp.presentation.search.adapter.TopDestinationRecyclerAdapter
 import com.yagizgokce.travelguideapp.presentation.search.viewmodel.SearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,6 +45,7 @@ class SearchFragment : Fragment() {
 
     private fun init() {
         getTopDestinationData()
+        getNearByData()
     }
     private fun getTopDestinationData(){
         searchViewModel.getTopDestination().observe(viewLifecycleOwner, Observer { topDestinationData ->
@@ -54,6 +56,17 @@ class SearchFragment : Fragment() {
                 topDestinationRecyclerView.adapter = topDestinationRecyclerAdapter
             }
 
+        })
+    }
+
+    private fun getNearByData(){
+        searchViewModel.getNearby().observe(viewLifecycleOwner, Observer { nearByData ->
+            val nearbyRecyclerAdapter = NearbyRecyclerAdapter(nearByData)
+            val gridLayoutManager = GridLayoutManager(context,1)
+            binding.apply {
+                nearbyRecyclerView.layoutManager = gridLayoutManager
+                nearbyRecyclerView.adapter = nearbyRecyclerAdapter
+            }
         })
     }
 

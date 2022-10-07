@@ -20,4 +20,9 @@
     <string name="might_need_these">Might need these</string>
     <string name="a_country_a_city_a_place_or_anything">A country, a city, a place... or anything</string>
     <string name="trip_plan">Trip Plan</string>
+    <string name="description_media">Description Media</string>
+    <string name="title">Title</string>
+    <string name="description_text">Description Text</string>
+    <string name="trips">Trips</string>
+    <string name="bookmark">Bookmark</string>
 </resources>
