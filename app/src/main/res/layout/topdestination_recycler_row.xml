@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="topDestinationItem"
-            type="com.yagizgokce.travelguideapp.domain.model.search.TopDestinationItem" />
+            name="allTravelListItem"
+            type="com.yagizgokce.travelguideapp.domain.model.AllTravelListModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,24 +24,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.144"
+            app:layout_constraintVertical_bias="0.14"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize8Percent"
             app:srcCompat="@drawable/tokyo" />
 
         <TextView
             android:id="@+id/cityName"
-            android:text="@{topDestinationItem.city}"
+            android:text="@{allTravelListItem.city}"
             app:layout_constraintEnd_toEndOf="@+id/imageView7"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="@+id/imageView7"
             style="@style/recyclerItemCity" />
 
         <TextView
             android:id="@+id/countryName"
-            android:text="@{topDestinationItem.country}"
+            style="@style/recyclerItemCountry"
+            android:text="@{allTravelListItem.country}"
             app:layout_constraintEnd_toEndOf="@+id/imageView7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cityName"
-            style="@style/recyclerItemCountry" />
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/cityName" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -2,18 +2,26 @@ package com.yagizgokce.travelguideapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.yagizgokce.travelguideapp.databinding.ActivityMainBinding
+import com.yagizgokce.travelguideapp.presentation.guide.ui.GuideFragment
+import com.yagizgokce.travelguideapp.presentation.home.ui.HomeFragment
+import com.yagizgokce.travelguideapp.presentation.plan.ui.TripPlanFragment
 import com.yagizgokce.travelguideapp.presentation.search.ui.SearchFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-private val homeFragment=HomeFragment()
+private val homeFragment= HomeFragment()
 private val searchFragment= SearchFragment()
-private val tripPlanFragment=TripPlanFragment()
-private val guideFragment=GuideFragment()
+private val tripPlanFragment= TripPlanFragment()
+private val guideFragment= GuideFragment()
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i("PATIKA","MAIN")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

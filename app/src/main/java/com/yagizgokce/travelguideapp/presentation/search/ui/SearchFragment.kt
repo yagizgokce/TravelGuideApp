@@ -1,15 +1,26 @@
 package com.yagizgokce.travelguideapp.presentation.search.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import com.yagizgokce.travelguideapp.R
+import com.yagizgokce.travelguideapp.databinding.FragmentSearchBinding
+import com.yagizgokce.travelguideapp.presentation.search.adapter.TopDestinationRecyclerAdapter
+import com.yagizgokce.travelguideapp.presentation.search.viewmodel.SearchViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SearchFragment : Fragment() {
 
+    private lateinit var binding: FragmentSearchBinding
+    private val searchViewModel : SearchViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +31,30 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_search,container,false)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init()
+    }
+
+    private fun init() {
+        getTopDestinationData()
+    }
+    private fun getTopDestinationData(){
+        searchViewModel.getTopDestination().observe(viewLifecycleOwner, Observer { topDestinationData ->
+            val topDestinationRecyclerAdapter = TopDestinationRecyclerAdapter(topDestinationData)
+            val gridLayoutManager = GridLayoutManager(context,1,GridLayoutManager.HORIZONTAL,false)
+            binding.apply {
+                topDestinationRecyclerView.layoutManager = gridLayoutManager
+                topDestinationRecyclerView.adapter = topDestinationRecyclerAdapter
+            }
+
+        })
     }
 
 }

@@ -1,17 +1,17 @@
 package com.yagizgokce.travelguideapp.di
 
 import com.google.gson.Gson
+import com.squareup.moshi.Moshi
 import com.yagizgokce.travelguideapp.data.remote.ApiService
-import com.yagizgokce.travelguideapp.data.remote.repository.TopDestinationRepositoryImp
-import com.yagizgokce.travelguideapp.domain.repository.TopDestinationRepository
+import com.yagizgokce.travelguideapp.data.remote.repository.TravelListRepositoryImp
+import com.yagizgokce.travelguideapp.domain.repository.TravelListRepository
 import com.yagizgokce.travelguideapp.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -22,11 +22,11 @@ class NetworkModule {
     @Provides
     @Singleton
     fun providesRetrofit(
-        gsonConverterFactory: GsonConverterFactory,
+        moshiConverterFactory: MoshiConverterFactory,
     ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(gsonConverterFactory)
+            .addConverterFactory(moshiConverterFactory)
             .build()
     }
 
@@ -38,8 +38,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesGsonConverterFactory(): GsonConverterFactory {
-        return GsonConverterFactory.create()
+    fun providesGsonConverterFactory(): MoshiConverterFactory {
+        return MoshiConverterFactory.create(Moshi.Builder().build())
     }
 
     @Provides
@@ -50,8 +50,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideTopDestinationRepository(apiService: ApiService): TopDestinationRepository {
-        return TopDestinationRepositoryImp(apiService)
+    fun provideTopDestinationRepository(apiService: ApiService): TravelListRepository {
+        return TravelListRepositoryImp(apiService)
     }
 
 }

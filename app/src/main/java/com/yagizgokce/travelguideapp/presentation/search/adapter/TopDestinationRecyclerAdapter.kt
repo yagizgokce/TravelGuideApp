@@ -6,9 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.yagizgokce.travelguideapp.R
-import com.yagizgokce.travelguideapp.domain.model.search.TopDestinationModel
+import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
 
-class TopDestinationRecyclerAdapter(private val topDestinationModel: TopDestinationModel):
+class TopDestinationRecyclerAdapter(private val allTravelListModel: List<AllTravelListModel>):
     RecyclerView.Adapter<TopDestinationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopDestinationViewHolder {
@@ -22,10 +22,10 @@ class TopDestinationRecyclerAdapter(private val topDestinationModel: TopDestinat
     }
 
     override fun onBindViewHolder(holder: TopDestinationViewHolder, position: Int) {
-        holder.topDestinationBind(topDestinationModel.items[position])
+        holder.topDestinationBind(allTravelListModel.get(position))
     }
 
     override fun getItemCount(): Int {
-        return topDestinationModel.items.size
+        return allTravelListModel.size
     }
 }
