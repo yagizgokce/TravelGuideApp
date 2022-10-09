@@ -9,7 +9,7 @@
         android:title="Search"
         android:icon="@drawable/ic_searchbuttonvector"/>
     <item
-        android:id="@+id/tripFragment"
+        android:id="@+id/tripPlanFragment"
         android:title="Trip Plan"
         android:icon="@drawable/ic_planbuttonvector"/>
     <item
