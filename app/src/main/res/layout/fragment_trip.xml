@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.plan.ui.TripFragment">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/planRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="271dp"
+            android:layout_marginBottom="156dp"
+            app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="@dimen/_46sdp"
+            android:layout_height="@dimen/_46sdp"
+            android:layout_marginBottom="55dp"
+            app:backgroundTint="#FF4760"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/planRecyclerView"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            app:tint="@color/white"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:contentDescription="@string/add_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
