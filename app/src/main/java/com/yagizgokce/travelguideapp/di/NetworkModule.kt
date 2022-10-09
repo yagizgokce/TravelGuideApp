@@ -50,7 +50,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideTopDestinationRepository(apiService: ApiService): TravelListRepository {
+    fun provideTravelListRepository(apiService: ApiService): TravelListRepository {
         return TravelListRepositoryImp(apiService)
     }
 
