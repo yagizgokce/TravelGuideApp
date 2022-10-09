@@ -21,6 +21,9 @@ class DealsUseCase @Inject constructor(
     private var _transportation = MutableLiveData<List<AllTravelListModel>>()
     val transportation: LiveData<List<AllTravelListModel>> = _transportation
 
+    private var _all = MutableLiveData<List<AllTravelListModel>>()
+    val all : LiveData<List<AllTravelListModel>> = _all
+
     val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         println("Error: ${throwable.localizedMessage}")
     }
@@ -61,6 +64,19 @@ class DealsUseCase @Inject constructor(
                 if(response.isSuccessful){
                     response.body()?.let {
                         _transportation.value = it
+                    }
+                }
+            }
+        }
+    }
+    fun getAll(){
+        job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
+            val response = travelListRepository.getTravelData("hotel||flight||transportation")
+
+            withContext(Dispatchers.Main){
+                if(response.isSuccessful){
+                    response.body()?.let {
+                        _all.value = it
                     }
                 }
             }

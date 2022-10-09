@@ -43,36 +43,36 @@ class HomeFragment : Fragment() {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab?.position){
-                    0 -> getHotelData()
+                    0 -> getAllData()
                     1 -> getFlightsData()
                     2 -> getHotelData()
                     3 -> getTransportationData()
                     else ->{
-                        getHotelData()
+                        getAllData()
                     }
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 when(tab?.position){
-                    0 -> getHotelData()
+                    0 -> getAllData()
                     1 -> getFlightsData()
                     2 -> getHotelData()
                     3 -> getTransportationData()
                     else ->{
-                        getHotelData()
+                        getAllData()
                     }
                 }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
                 when(tab?.position){
-                    0 -> getHotelData()
+                    0 -> getAllData()
                     1 -> getFlightsData()
                     2 -> getHotelData()
                     3 -> getTransportationData()
                     else ->{
-                        getHotelData()
+                        getAllData()
                     }
                 }
             }
@@ -120,6 +120,21 @@ class HomeFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun getAllData(){
+        homeViewModel.getAll().observe(viewLifecycleOwner, Observer { allData ->
+
+            val gridLayoutManager = GridLayoutManager(context,1, GridLayoutManager.HORIZONTAL,false)
+            val dealsRecyclerAdapter = DealsRecyclerAdapter(allData)
+
+            binding.apply {
+                dealsRecyclerView.layoutManager = gridLayoutManager
+                dealsRecyclerView.adapter = dealsRecyclerAdapter
+            }
+
+        })
+
     }
 
 

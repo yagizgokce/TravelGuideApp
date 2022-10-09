@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
 import com.yagizgokce.travelguideapp.domain.usecase.DealsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.merge
 import javax.inject.Inject
 
 @HiltViewModel
@@ -34,4 +35,13 @@ class HomeViewModel @Inject constructor(
             return transportation
         }
     }
+
+    fun getAll() : LiveData<List<AllTravelListModel>> {
+
+        dealsUseCase.apply {
+            getAll()
+            return all
+        }
+    }
+
 }
