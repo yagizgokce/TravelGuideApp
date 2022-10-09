@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="planItem"
+            type= "com.yagizgokce.travelguideapp.domain.model.AllTravelListModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/planImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:downloadImage="@{planItem.images[0].url}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize8Percent"
+            app:srcCompat="@drawable/marina" />
+        <TextView
+            android:id="@+id/cityName"
+            style="@style/recyclerItemCity"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:text="@{planItem.city}"
+            android:textSize="@dimen/_19ssp"
+            app:layout_constraintEnd_toEndOf="@+id/planImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/planImageView" />
+
+        <TextView
+            android:id="@+id/countryName"
+            android:text="@{planItem.country}"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="@+id/planImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cityName"
+            style="@style/recyclerItemCountry" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
