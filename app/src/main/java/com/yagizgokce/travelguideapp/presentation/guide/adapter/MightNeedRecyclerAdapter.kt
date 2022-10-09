@@ -7,7 +7,6 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.yagizgokce.travelguideapp.R
 import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
-import com.yagizgokce.travelguideapp.presentation.search.adapter.NearbyViewHolder
 
 class MightNeedRecyclerAdapter(private val allTravelListModel: List<AllTravelListModel>)
     : RecyclerView.Adapter<MightNeedViewHolder>() {

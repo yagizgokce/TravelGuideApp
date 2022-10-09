@@ -27,4 +27,5 @@ class NearbyRecyclerAdapter(private val allTravelListModel: List<AllTravelListMo
     override fun getItemCount(): Int {
         return allTravelListModel.size
     }
+
 }
