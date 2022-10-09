@@ -25,4 +25,10 @@
     <string name="description_text">Description Text</string>
     <string name="trips">Trips</string>
     <string name="bookmark">Bookmark</string>
+    <string name="add_button">add_button</string>
+    <string name="backbutton">backButton</string>
+    <string name="expandbutton">expandButton</string>
+    <string name="detail_title">Title</string>
+    <string name="textview">TextView</string>
+    <string name="add_bookmark">Add Bookmark</string>
 </resources>
