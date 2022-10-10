@@ -23,22 +23,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        //openFragment(homeFragment)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*binding.bottomNavigation.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.home->openFragment(homeFragment)
-                R.id.search->openFragment(searchFragment)
-                R.id.plan->openFragment(tripPlanFragment)
-                R.id.guide->openFragment(guideFragment)
-
-            }
-            true
-        }
-        navController= Navigation.findNavController(this,R.id.fragment)
-        setupWithNavController(binding.bottomNavigation,navController)*/
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
@@ -46,10 +33,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun openFragment(fragment: Fragment?) {
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment, fragment!!)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
 }

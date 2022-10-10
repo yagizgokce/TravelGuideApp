@@ -19,14 +19,14 @@ class TopDestinationUseCase @Inject constructor(
         println("Error: ${throwable.localizedMessage}")
     }
 
-    fun getTopDestination(){
+    fun getTopDestination() {
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             val response = travelListRepository.getTravelData("topdestination")
 
             withContext(Dispatchers.Main){
                 if(response.isSuccessful){
                     response.body()?.let {
-                        _topDestinations.value = it
+                       _topDestinations.value = it
                     }
                 }
             }

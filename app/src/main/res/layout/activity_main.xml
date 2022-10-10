@@ -13,7 +13,7 @@
         android:id="@+id/container"
         tools:context=".MainActivity">
 
-       <!-- <androidx.cardview.widget.CardView
+       <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="10dp">
-        </androidx.cardview.widget.CardView> -->
+        </androidx.cardview.widget.CardView>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigation"
