@@ -19,7 +19,6 @@ val tabArray = arrayOf(
 class TripPlanFragment : Fragment() {
     private lateinit var binding: FragmentTripPlanBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

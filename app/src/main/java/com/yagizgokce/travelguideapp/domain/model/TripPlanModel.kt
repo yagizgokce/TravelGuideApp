@@ -2,6 +2,7 @@ package com.yagizgokce.travelguideapp.domain.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity
 data class TripPlanModel(
@@ -11,4 +12,9 @@ data class TripPlanModel(
     val country: String,
     @ColumnInfo(name = "tripDate")
     val tripDate: String
-)
+){
+
+    @PrimaryKey(autoGenerate = true)
+    var uuid : Int = 0
+
+}

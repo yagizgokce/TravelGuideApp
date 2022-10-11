@@ -1,13 +1,13 @@
 package com.yagizgokce.travelguideapp.domain.repository
 
-import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
 import com.yagizgokce.travelguideapp.domain.model.TripPlanModel
+import kotlinx.coroutines.flow.Flow
 
 interface TripPlanRepository {
 
-    suspend fun insertAll(vararg tripPlanModel: TripPlanModel) : List<Long>
+    suspend fun insertAll(tripPlanModel: TripPlanModel)
 
-    suspend fun getAllPlanData() : List<TripPlanModel>
+    fun getAllPlanData() : Flow<List<TripPlanModel>>
 
-    suspend fun deleteAll()
+    suspend fun deleteItem(tripPlanModel: TripPlanModel)
 }

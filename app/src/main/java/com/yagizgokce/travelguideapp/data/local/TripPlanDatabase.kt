@@ -6,10 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.yagizgokce.travelguideapp.domain.model.TripPlanModel
 
-@Database(entities = arrayOf(TripPlanModel::class), version = 1)
+@Database(entities = [TripPlanModel::class], version = 1)
 abstract class TripPlanDatabase : RoomDatabase() {
 
-    abstract fun travelListDAO() : TripPlanDAO
+    abstract fun tripPlanDAO() : TripPlanDAO
 
     companion object {
         @Volatile
@@ -19,13 +19,13 @@ abstract class TripPlanDatabase : RoomDatabase() {
         private val lock = Any()
 
         operator fun invoke(context : Context) = INSTANCE ?: synchronized(lock){
-            INSTANCE ?: databaseOlustur(context).also {
+            INSTANCE ?: createDatabase(context).also {
                 INSTANCE = it
             }
         }
 
 
-        private fun databaseOlustur(context: Context) = Room.databaseBuilder(
+        private fun createDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext,
             TripPlanDatabase::class.java,"tripplandb").build()
     }
