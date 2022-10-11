@@ -7,8 +7,9 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.yagizgokce.travelguideapp.R
 import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
+import com.yagizgokce.travelguideapp.domain.model.TripPlanModel
 
-class PlanRecyclerAdapter(private val allTravelListModel: List<AllTravelListModel>)
+class PlanRecyclerAdapter(private val tripPlanModel: List<TripPlanModel>)
     :RecyclerView.Adapter<PlanViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -21,10 +22,10 @@ class PlanRecyclerAdapter(private val allTravelListModel: List<AllTravelListMode
     }
 
     override fun onBindViewHolder(holder: PlanViewHolder, position: Int) {
-        holder.planBind(allTravelListModel.get(position))
+        holder.planBind(tripPlanModel.get(position))
     }
 
     override fun getItemCount(): Int {
-        return allTravelListModel.size
+        return tripPlanModel.size
     }
 }
