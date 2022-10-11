@@ -11,4 +11,12 @@ class TravelListRepositoryImp @Inject constructor (private val apiService: ApiSe
     override suspend fun getTravelData(category: String): Response<List<AllTravelListModel>> {
         return apiService.getTravelData(category)
     }
+
+    override suspend fun updateData(id : Int, allTravelListModel: AllTravelListModel): Response<AllTravelListModel> {
+        return apiService.updateData(id, allTravelListModel)
+    }
+
+    override suspend fun getBookmarkData(isBookmark: Boolean): Response<List<AllTravelListModel>> {
+        return apiService.getBookmarkData(isBookmark)
+    }
 }
