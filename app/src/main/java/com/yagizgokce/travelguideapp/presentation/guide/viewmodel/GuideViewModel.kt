@@ -3,20 +3,18 @@ package com.yagizgokce.travelguideapp.presentation.guide.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
-import com.yagizgokce.travelguideapp.domain.usecase.MightNeedUseCase
-import com.yagizgokce.travelguideapp.domain.usecase.TopPickUseCase
+import com.yagizgokce.travelguideapp.domain.usecase.GuideUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class GuideViewModel @Inject constructor(
-    private val mightNeedUseCase: MightNeedUseCase,
-    private val topPickUseCase: TopPickUseCase
+    private val guideUseCase: GuideUseCase
 ): ViewModel() {
 
     fun getMightNeed() : LiveData<List<AllTravelListModel>>{
 
-        mightNeedUseCase.apply {
+        guideUseCase.apply {
             getMightNeed()
             return mightNeed
         }
@@ -24,7 +22,7 @@ class GuideViewModel @Inject constructor(
 
     fun getTopPick() : LiveData<List<AllTravelListModel>>{
 
-        topPickUseCase.apply {
+        guideUseCase.apply {
             getTopPick()
             return topPick
         }

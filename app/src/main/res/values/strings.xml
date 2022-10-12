@@ -31,4 +31,9 @@
     <string name="detail_title">Title</string>
     <string name="textview">TextView</string>
     <string name="add_bookmark">Add Bookmark</string>
+    <string name="all_tab">All</string>
+    <string name="flights_tab">Flights</string>
+    <string name="hotels_tab">Hotels</string>
+    <string name="transportation_tab">Transportation</string>
+    <string name="top_pick_articles">Top-pick articles</string>
 </resources>

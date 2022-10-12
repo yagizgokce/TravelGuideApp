@@ -1,4 +1,4 @@
-package com.yagizgokce.travelguideapp.presentation.search.viewmodel
+package com.yagizgokce.travelguideapp.presentation.searchResult.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -8,23 +8,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(
+class SearchResultViewModel @Inject constructor(
     private val searchUseCase: SearchUseCase
 ): ViewModel() {
 
-    fun getTopDestination() : LiveData<List<AllTravelListModel>>{
+    fun getSearch(term : String): LiveData<List<AllTravelListModel>> {
         searchUseCase.apply {
-            getTopDestination()
-            return topDestinations
+            getSearch(term)
+            return filteredData
         }
     }
-    fun getNearby() : LiveData<List<AllTravelListModel>>{
-        searchUseCase.apply {
-            getNearby()
-            return nearBy
-        }
-    }
-
-
 
 }

@@ -39,6 +39,7 @@ class HomeFragment : Fragment() {
         init()
     }
     private fun init() {
+        getAllData()
         binding.dealsTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -52,29 +53,10 @@ class HomeFragment : Fragment() {
                     }
                 }
             }
-
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                when(tab?.position){
-                    0 -> getAllData()
-                    1 -> getFlightsData()
-                    2 -> getHotelData()
-                    3 -> getTransportationData()
-                    else ->{
-                        getAllData()
-                    }
-                }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                when(tab?.position){
-                    0 -> getAllData()
-                    1 -> getFlightsData()
-                    2 -> getHotelData()
-                    3 -> getTransportationData()
-                    else ->{
-                        getAllData()
-                    }
-                }
             }
 
         }

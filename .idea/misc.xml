@@ -8,26 +8,34 @@
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_bookmarkvector.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_bottom_nav_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_flightsvector.xml" value="0.34" />
         <entry key="app/src/main/res/drawable/ic_homescreenbg.xml" value="0.34" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
         <entry key="app/src/main/res/drawable/ic_searchvector.xml" value="0.2005" />
         <entry key="app/src/main/res/drawable/ic_selectedbottomitem.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_tripvector.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/item_bottom_nav.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/item_selector.xml" value="0.1595" />
         <entry key="app/src/main/res/drawable/roundecorner.xml" value="0.1125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/add_dialog_layout.xml" value="0.16576576576576577" />
+        <entry key="app/src/main/res/layout/add_trip_dialog_layout.xml" value="0.46365914786967416" />
         <entry key="app/src/main/res/layout/bookmark_recycler_row.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/deals_recycler_row.xml" value="0.16576576576576577" />
+        <entry key="app/src/main/res/layout/fragment_add_dialog.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.1545045045045045" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_guide.xml" value="0.1545045045045045" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/layout/fragment_trip.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_guide.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2777777777777778" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/fragment_search_result.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/fragment_trip.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_trip_plan.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/mightneed_recycler_row.xml" value="0.16576576576576577" />
+        <entry key="app/src/main/res/layout/mightneed_recycler_row.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nearby_recycler_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/plan_recycler_row.xml" value="0.16576576576576577" />
+        <entry key="app/src/main/res/layout/search_result_row.xml" value="0.16576576576576577" />
         <entry key="app/src/main/res/layout/topdestination_recycler_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/toppick_recycler_row.xml" value="0.14444444444444443" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.16666666666666666" />

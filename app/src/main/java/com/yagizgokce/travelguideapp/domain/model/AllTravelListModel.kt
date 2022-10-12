@@ -19,7 +19,7 @@ data class AllTravelListModel(
     @SerializedName("images")
     val images: List<Image>?,
     @SerializedName("isBookmark")
-    val isBookmark: Boolean,
+    var isBookmark: Boolean,
     @SerializedName("title")
     val title: String
 ): Parcelable

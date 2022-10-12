@@ -1,13 +1,18 @@
 package com.yagizgokce.travelguideapp.presentation.search.ui
 
 import android.os.Bundle
+
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yagizgokce.travelguideapp.R
 import com.yagizgokce.travelguideapp.databinding.FragmentSearchBinding
@@ -39,9 +44,22 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+        binding.searchText.setOnEditorActionListener {view, actionId, keyEvent ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE ||
+                keyEvent == null ||
+                keyEvent.keyCode == KeyEvent.KEYCODE_ENTER) {
+                var term = binding.searchText.text.toString()
+                Navigation.findNavController(view)
+                    .navigate(SearchFragmentDirections.actionSearchFragmentToSearchResultFragment(term))
+                true
+            }
+            false
+        }
+
     }
 
     private fun init() {
+
         getTopDestinationData()
         getNearByData()
     }
@@ -67,6 +85,11 @@ class SearchFragment : Fragment() {
             }
         })
     }
+
+
+
+
+
 
 
 }

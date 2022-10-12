@@ -1,4 +1,4 @@
-package com.yagizgokce.travelguideapp.presentation.search.adapter
+package com.yagizgokce.travelguideapp.presentation.searchResult.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,25 +7,24 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.yagizgokce.travelguideapp.R
 import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
-import com.yagizgokce.travelguideapp.presentation.Detail.viewmodel.DetailViewModel
-import com.yagizgokce.travelguideapp.presentation.search.viewmodel.SearchViewModel
+import com.yagizgokce.travelguideapp.presentation.search.adapter.NearbyViewHolder
 
-class NearbyRecyclerAdapter(
+class SearchResultAdapter(
     private val allTravelListModel: List<AllTravelListModel>)
 
-    : RecyclerView.Adapter<NearbyViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NearbyViewHolder {
+    : RecyclerView.Adapter<SearchResultViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = DataBindingUtil.inflate<ViewDataBinding>(
             inflater,
-            R.layout.nearby_recycler_row,
+            R.layout.search_result_row,
             parent,
             false)
-        return NearbyViewHolder(view)
+        return SearchResultViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: NearbyViewHolder, position: Int) {
-        holder.nearbyBind(allTravelListModel.get(position))
+    override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) {
+        holder.searchResultBind(allTravelListModel.get(position))
     }
 
     override fun getItemCount(): Int {

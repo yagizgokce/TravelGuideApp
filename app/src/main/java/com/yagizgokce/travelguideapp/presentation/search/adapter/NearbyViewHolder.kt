@@ -8,16 +8,25 @@ import com.yagizgokce.travelguideapp.databinding.NearbyRecyclerRowBinding
 import com.yagizgokce.travelguideapp.domain.model.AllTravelListModel
 import com.yagizgokce.travelguideapp.presentation.search.ui.SearchFragmentDirections
 
-class NearbyViewHolder(private val nearbyBinding: ViewDataBinding)
+class NearbyViewHolder(
+    private val nearbyBinding: ViewDataBinding
+)
     : RecyclerView.ViewHolder(nearbyBinding.root){
 
         fun nearbyBind(nearbyItem : AllTravelListModel){
             nearbyBinding as NearbyRecyclerRowBinding
             nearbyBinding.apply {
                 setVariable(BR.nearbyListItem,nearbyItem)
+
                 nearbyView.setOnClickListener {
                     Navigation.findNavController(it)
                         .navigate(SearchFragmentDirections.actionSearchFragmentToDetailFragment(nearbyItem))
+                }
+
+                bookmarkButton.setOnClickListener{
+                    var updateData = nearbyItem
+                    updateData.isBookmark = nearbyItem.isBookmark != true
+                    setVariable(BR.nearbyListItem,nearbyItem)
                 }
             }
         }

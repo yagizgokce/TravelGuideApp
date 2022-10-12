@@ -8,56 +8,53 @@
             name="choosenTravel"
             type="com.yagizgokce.travelguideapp.domain.model.AllTravelListModel" />
     </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         tools:context=".presentation.Detail.ui.DetailFragment">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/_288sdp"
+                android:layout_height="@dimen/_340sdp"
+                android:layout_marginStart="8dp"
+                android:downloadImage="@{choosenTravel.images[0].url}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_screen_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/_37sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_gravity="top"
+                android:background="@drawable/roundecorner"
+                android:contentDescription="@string/backbutton"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+        </RelativeLayout>
 
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView4"
-            android:layout_width="@dimen/_288sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/home_screen_bg"
-            android:downloadImage="@{choosenTravel.images[0].url}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="@dimen/_37sdp"
-            android:layout_height="@dimen/_37sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/roundecorner"
-            android:contentDescription="@string/backbutton"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/expandButton"
-            android:layout_width="@dimen/_37sdp"
-            android:layout_height="@dimen/_37sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:background="@drawable/roundecorner"
-            android:contentDescription="@string/expandbutton"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/detailTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat"
             android:text="@{choosenTravel.title}"
             android:textColor="#0A2753"
@@ -70,7 +67,23 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
             android:text="@{choosenTravel.city +`,`+ choosenTravel.country}"
+            app:layout_constraintStart_toStartOf="@+id/detailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/detailTitle" />
+
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat"
+            android:scrollbars="vertical"
+            android:text="@{choosenTravel.description}"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.471"
             app:layout_constraintStart_toStartOf="@+id/detailTitle"
             app:layout_constraintTop_toBottomOf="@+id/detailTitle" />
 
@@ -78,30 +91,18 @@
             android:id="@+id/addbutton"
             android:layout_width="@dimen/_237sdp"
             android:layout_height="@dimen/_42sdp"
-            android:layout_marginBottom="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
             android:text="@string/add_bookmark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck" />
 
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:scrollbars="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11">
 
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/descriptionText"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@{choosenTravel.description}"/>
-        </ScrollView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
 </layout>

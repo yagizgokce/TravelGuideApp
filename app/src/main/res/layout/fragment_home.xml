@@ -13,15 +13,16 @@
 
 
     <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/image"
-            android:src="@drawable/home_screen_bg"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        android:id="@+id/imageView"
+        android:layout_width="391dp"
+        android:layout_height="432dp"
+        android:contentDescription="@string/image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/home_screen_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -121,22 +122,22 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All" />
+            android:text="@string/all_tab" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flights" />
+            android:text="@string/flights_tab" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hotels" />
+            android:text="@string/hotels_tab" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transportation" />
+            android:text="@string/transportation_tab" />
 
     </com.google.android.material.tabs.TabLayout>
     <TextView
@@ -149,7 +150,7 @@
             android:textColor="#181A25"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/_18sdp" app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+            android:layout_marginTop="@dimen/_15sdp" app:layout_constraintTop_toBottomOf="@+id/imageView"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dealsRecyclerView"
