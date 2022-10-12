@@ -37,15 +37,15 @@
             android:layout_marginTop="@dimen/_35sdp"
             android:text="@{searchResult.city}"
             android:textSize="@dimen/_19ssp"
-            app:layout_constraintEnd_toEndOf="@+id/nearbyView"
+            app:layout_constraintEnd_toEndOf="@+id/searchResultView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/nearbyView" />
+            app:layout_constraintTop_toTopOf="@+id/searchResultView" />
 
         <TextView
             android:id="@+id/countryName"
             android:text="@{searchResult.country}"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintEnd_toEndOf="@+id/nearbyView"
+            app:layout_constraintEnd_toEndOf="@+id/searchResultView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cityName"
             style="@style/recyclerItemCountry" />
@@ -58,7 +58,6 @@
             android:layout_marginEnd="@dimen/_6sdp"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:onClick="addBookmark"
             android:background="@drawable/roundecorner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
